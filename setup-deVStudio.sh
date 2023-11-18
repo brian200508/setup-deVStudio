@@ -36,3 +36,7 @@ echo "Don't forget Your Git config:"
 echo "    git config --global user.name \"Your Name\""
 echo "    git config --global user.email \"your.email-address@domain.com\""
 echo ""
+echo "Close VSCode and restart with:"
+echo "    code --no-sandbox"
+echo ""
+

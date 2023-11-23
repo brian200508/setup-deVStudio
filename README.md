@@ -8,7 +8,7 @@ Post install script for fixing Microsoft Repository and updating VSCode installa
 Download and execute the post-installation script; for example in the Temrinal window opened by default:
 
 ```bash
-rm /etc/apt/sources.list.d/vscode.list && apt update -y && sudo apt install -y git && git clone https://github.com/brian200508/setup-deVStudio.git
+rm -f /etc/apt/sources.list.d/vscode.list && apt update -y && sudo apt install -y git && git clone https://github.com/brian200508/setup-deVStudio.git
 ```
 
 ```bash

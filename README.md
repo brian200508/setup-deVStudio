@@ -29,4 +29,7 @@ chmod +x ./setup-deVStudio/setup-deVStudio.sh && ./setup-deVStudio/setup-deVStud
 rm -rf ./setup-deVStudio
 ```
 
+## Restart VSCode
+Restart the deVStudio App (or exit VSCode and restart with ```code --no-sandbox```).
+
 That's it ;)

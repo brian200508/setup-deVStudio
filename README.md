@@ -4,6 +4,12 @@ Post install script for fixing Microsoft Repository and updating VSCode installa
 ## Prerequisites
 - Install UserLAnd from Google Play Store (https://play.google.com/store/apps/details?id=tech.ula.devstudio).
 
+## Quick-Fix for VSCode repo (trust unsigned repo)
+In order to get always the latest Visual Studio Code release with ```apt update``` and ```apt upgrade```, do this once:
+```bash
+sed -i 's/arch=/trusted=yes arch=/' /etc/apt/sources.list.d/vscode.list && sudo apt update -y && sudo apt upgrade -y
+```
+
 ## Do post-install
 Download and execute the post-installation script; for example in the Temrinal window opened by default:
 

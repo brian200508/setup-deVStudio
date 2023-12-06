@@ -8,6 +8,7 @@ Post install script for fixing Microsoft Repository and updating VSCode installa
 ```bash
 sed -i 's/arch=/trusted=yes arch=/' /etc/apt/sources.list.d/vscode.list && sudo apt update -y && sudo apt upgrade -y
 ```
+Restart the deVStudio App (or exit VSCode and restart with ```code --no-sandbox```).
 
 That's it ;)
 

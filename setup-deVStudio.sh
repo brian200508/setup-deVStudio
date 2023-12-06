@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Fix vscode.list: Use signed Microsoft Repo
-echo "Signing VSCode repository..."
-sudo apt install -y wget gpg apt-transport-https
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
+## Fix vscode.list: Use signed Microsoft Repo
+#echo "Signing VSCode repository..."
+#sudo apt install -y wget gpg apt-transport-https
+#wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+#sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+#sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+#rm -f packages.microsoft.gpg
+#sudo apt update -y
+#sudo apt upgrade -y 
+# Fix vscode.list: Trust Microsoft Repo (fix above does not upgradeVSCode to latest release)
+echo "Trusting VSCode repository..."
+sed -i 's/arch=/trusted=yes arch=/' /etc/apt/sources.list.d/vscode.list
 sudo apt update -y
-sudo apt upgrade -y 
+sudo apt upgrade -y
 
 # Git, Python3 and essentials
 #echo "Setting up Git, Python3 and essentials"

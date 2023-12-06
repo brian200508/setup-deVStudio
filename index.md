@@ -9,7 +9,6 @@ Post install script for fixing Microsoft Repository and updating VSCode installa
 sed -i 's/arch=/trusted=yes arch=/' /etc/apt/sources.list.d/vscode.list && sudo apt update -y && sudo apt upgrade -y
 ```
 
-## Do post-install
-Contains the Quick-Fix for VSCode repo and some more stuff (see [README.md](./README.md)).
-
 That's it ;)
+
+For more details see [README.md](./README.md).
